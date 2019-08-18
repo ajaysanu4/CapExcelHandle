@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Index</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    {% load static %}
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+
+<body>
+<form method="POST" class="post-form" action="/update/{{employee.id}}" class="table table-dark"  align="center" >
+    {%csrf_token%}
+    <div class="container" ><br>
+        <h1 align="center">Update Details</h1>
+        <hr>
+
+    <div class="form-group row">
+        <label class="col-sm-1 col-form-label"><b>Employee Id</b></label>
+            <div class="col-sm-4">
+             <input type="text" name="eid" id="id_eid" required maxlength="20" value="{{employee.eid}}"/>
+            </div>
+        </div>
+    <div class="form-group row">
+        <label class="col-sm-1 col-form-label"><b>Employee Name</b></label>
+            <div class="col-sm-4">
+                <input type="text" name="ename" id="id_ename" required maxlength="100" value="{{employee.ename}}"/>
+            </div>
+        </div>
+    <div class="form-group row">
+        <label class="col-sm-1 col-form-label"><b>Employee Email</b></label>
+            <div class="col-sm-4">
+                <input type="text" name="eemail" id="id_email" required maxlength="254" value="{{employee.eemail}}"/>
+            </div>
+        </div>
+    <div class="form-group row">
+        <label class="col-sm-1 col-form-label"><b>Employee Contact</b></label>
+            <div class="col-sm-4">
+                <input type="text" name="econtact" id="id_econtact" required maxlength="20" value="{{employee.econtact}}"/>
+            </div>
+        </div>
+        <br>
+    <div class="form-group row">
+
+            <div class="col-sm-4">
+             <button type="submit" class="btn btn-primary">Update</button>
+            </div>
+        </div>
+    </div>
+</form>
+</table>
+</body>
+
+</html>
